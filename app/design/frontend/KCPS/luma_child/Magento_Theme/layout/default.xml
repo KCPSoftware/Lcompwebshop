@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.panel">
+            <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
+                <arguments>
+                    <argument name="css_class" xsi:type="string">header links</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <move element="logo" destination="nav-sections" />
+        </referenceContainer>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_img_width" xsi:type="number">148</argument>
+                <argument name="logo_img_height" xsi:type="number">43</argument>
+            </arguments>
+        </referenceBlock>
+        <move element="logo" destination="before.nav-sections" />
+        <referenceContainer name="footer">
+            <block class="Magento\Store\Block\Switcher" name="store_switcher" as="store_switcher" after="footer_links" template="switch/stores.phtml"/>
+        </referenceContainer>
+        <referenceBlock name="report.bugs" remove="true"/>
+        <referenceBlock name="footer_links">
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="your-link-name">
+                <arguments>
+                    <argument name="label" xsi:type="string">Hulp op afstand</argument>
+                    <argument name="path" xsi:type="string">http://www.islonline.net/start/ISLLightClient</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+        <referenceBlock name="privacy-policy-link" remove="true"/>
+        <referenceBlock name="search-term-popular-link" remove="true"/>
+        <referenceBlock name="contact-us-link" remove="true"/>
+        <referenceBlock name="catalog-search-advanced-link" remove="true"/>
+        <referenceBlock name="sales-guest-form-link" remove="true"/>
+        <move element="copyright" destination="before.body.end"/>
+    </body>
+</page>
