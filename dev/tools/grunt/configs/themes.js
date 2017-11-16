@@ -41,16 +41,6 @@ module.exports = {
         ],
         dsl: 'less'
     },
-    luma_child: {
-        area: 'frontend',
-        name: 'KCPS/luma_child',
-        locale: 'nl_NL',
-        files: [
-            'css/styles-m',
-            'css/styles-l'
-        ],
-        dsl: 'less'
-    },
     backend: {
         area: 'adminhtml',
         name: 'Magento/backend',
